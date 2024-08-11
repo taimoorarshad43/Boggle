@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Boogle!{% endblock %}
+
+{% block body %}
+
+<div>
+<h1 class = "text-center">Boogle!</h1>
+</div>
+
+<div class = "container text-center">
+{% for row in board%}
+    <div class = "row mt-5">
+    {% for column in row%}
+        <div class = "col-sm">{{column}}</div>    
+    {% endfor %}
+    </div>
+{% endfor %}
+</div>
+
+{% endblock %}
