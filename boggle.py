@@ -19,7 +19,8 @@ class Boggle():
         return words
 
     def make_board(self):
-        """Make and return a random boggle board."""
+        """Make and return a random boggle board.
+           This will be rendered in the HTML layout"""
 
         board = []
 
@@ -32,8 +33,8 @@ class Boggle():
     def check_valid_word(self, board, word):
         """Check if a word is a valid word in the dictionary and/or the boggle board"""
 
-        word_exists = word in self.words
-        valid_word = self.find(board, word.upper())
+        word_exists = word in self.words                # Checks to see if word is a legal work
+        valid_word = self.find(board, word.upper())     # Word may be legal but is that what the user found? Both of these are boolean.
 
         if word_exists and valid_word:
             result = "ok"
