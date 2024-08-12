@@ -18,7 +18,7 @@ class Boggle():
         dict_file.close()
         return words
 
-    def make_board(self):
+    def make_board(self): # TODO: refactor into larger board
         """Make and return a random boggle board.
            This will be rendered in the HTML layout"""
 
