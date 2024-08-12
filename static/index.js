@@ -10,5 +10,6 @@ $('form').on("submit", async function(e) {
     console.log(result);
     $input.val("")
     $("div.result").text("")
-    $("body").append(`<div class = "text-center mt-5 font-weight-bold result">${result}</div>`);
+    $("body").append(`<div class = "text-center mt-5 result">
+        <h4 class = "font-weight-bold">${result}</h4></div>`);
 });
