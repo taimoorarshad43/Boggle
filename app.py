@@ -13,18 +13,9 @@ def index():
     session["board"] = board
     return render_template("index.html", board = board)
 
-# @app.route("/guess", methods = ["POST"])
-# def takeguess():
-#     word = request.json["guess"]
-#     print(word)
-#     board = session["board"]
-#     result = boggle_game.check_valid_word(board, word)
-
-#     return result
-
 @app.route("/guess") # GET version
 def takeguess():
-    word = request.args["guess"]
+    word = request.args["guess"].lower()
     print(word)
     board = session["board"]
     result = boggle_game.check_valid_word(board, word)
