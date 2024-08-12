@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
-{% block title %}Boogle!{% endblock %}
+{% block title %}Boggle!{% endblock %}
 
 {% block body %}
 
 <div>
-<h1 class = "text-center">Boogle!</h1>
+<h1 class = "text-center mt-5">Boggle!</h1>
 </div>
 
 <div class = "container text-center">
@@ -19,10 +19,14 @@
 </div>
 
 <div class = "text-center mt-5">
-    <form>
+    <form id = "inputguess">
         <label class = "col-1">Guess a Word</label>
         <input type = "text" name = "guess">
     </form>
 </div>
 
+{% endblock %}
+
+{% block script %}
+<script src = "/static/index.js"></script>
 {% endblock %}
