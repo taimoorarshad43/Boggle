@@ -36,7 +36,7 @@ class Boggle():
         word_exists = word in self.words                # Checks to see if word is a legal work
         valid_word = self.find(board, word.upper())     # Word may be legal but is that what the user found? Both of these are boolean.
 
-        if word_exists and valid_word:
+        if word_exists and valid_word:                  # The function call above is the recursive function.
             result = "ok"
         elif word_exists and not valid_word:
             result = "not-on-board"
