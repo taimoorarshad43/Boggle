@@ -18,6 +18,15 @@ def takeguess():
     word = request.args["guess"].lower()
     print(word)
     board = session["board"]
-    result = boggle_game.check_valid_word(board, word)
 
-    return jsonify(result)
+    result = boggle_game.check_valid_word(board, word)
+    score = getscore(word, result)
+
+    return jsonify(result, score)
+
+
+def getscore(word, result):
+    if result != 'ok':
+        return 0
+    
+    return len(word)
