@@ -4,8 +4,8 @@ let words = []
 let highscore = 0;
 let timesplayed = 0;
 
-// let timer = 60;
-let timer = 5;
+let timer = 60;
+// let timer = 5;
 let $timer = $('div.timer h4');
 
 let timeractive = false;                                                    // Helps with not calling decreaseTimer function twice
@@ -46,8 +46,8 @@ $('button#restart').on("click", function(){                                 // R
     score = 0;
     words = [];
     result = '';
-    // timer = 60;
-    timer = 5;
+    timer = 60;
+    // timer = 5;
     timeractive = false;
     $('input').val("");
     $("div.result").text("");
