@@ -14,7 +14,7 @@ def index():
     board = boggle_game.make_board()
     print(board)
     session["board"] = board
-    return render_template("index.html", board = board)
+    return render_template("index.html", board = board, highscore = score, timesplayed = timesplayed)
 
 @app.route("/guess") # GET version
 def takeguess():
