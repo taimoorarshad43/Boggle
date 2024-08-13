@@ -2,7 +2,8 @@ let result = '';
 let score = 0;
 let words = []
 
-let timer = 60;
+// let timer = 60;
+let timer = 5;
 let $timer = $('div.timer h4');
 
 let timeractive = false;                                                    // Helps with not calling decreaseTimer function twice
@@ -31,32 +32,35 @@ $('form').on("submit", async function(e) {
 
     if (timeractive === false){
         timeractive = true;
-        setInterval(decreasetimer, 1000);
+        decreasetimer = setInterval(decreasetimer, 1000);
     }
 
-    // $input.val("")                                                          // Append result and score by clearing the div.result and reappending
-    // $("div.result").text("")
-    // $("body").append(`<div class = "text-center mt-5 result">
-    //     <h4 class = "font-weight-bold">Result: ${result}</h4></div>`);
-    // $("body").append(`<div class = "text-center mt-5 result">
-    //     <h4 class = "font-weight-bold">Score: ${score}</h4></div>`);
     addScoreResult(result, score, timer, $input);
 
 });
 
-function decreasetimer(){
+function sendScore(score){
+    console.log("score sent");
+    axios.post("/highestscore", {score : score});
+}
+
+function decreasetimer(){                                                   // Decrements timer var with a setInterval call
     if (timer >= 0){
         $timer.text(`Timer: ${timer}`);
         timer -= 1;    
     }else{
         $('input').val("");
-        $("div.result").text(""); 
+        $("div.result").text("");
         $("body").append(`<div class = "text-center mt-5 result">
         <h4 class = "font-weight-bold">No more guesses!</h4></div>`);
+        $("body").append(`<div class = "text-center mt-5 result">
+        <h4 class = "font-weight-bold">Score: ${score}</h4></div>`);
+        sendScore(score);
+        clearInterval(decreasetimer);                                       // Stop the constant score sending and timer decrementing
     }
 }
 
-function addScoreResult(result, score, timer, $input){
+function addScoreResult(result, score, timer, $input){                      // Adds score and result to the web page
     if(timer > 0){
         $input.val("");
         $("div.result").text("");
