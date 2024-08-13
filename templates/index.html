@@ -10,8 +10,8 @@
 
 <div class="container text-center">
     <div class="row">
-        <div class = "col-0.5">Times Played = {{timesplayed}}</div>
-        <div class = "container text-center col-10">
+        <div class = "col-2 timesplayed">Times Played = {{timesplayed}}</div>
+        <div class = "container text-center col-8">
         {% for row in board%}
             <div class = "row mt-5">
             {% for column in row%}
@@ -20,14 +20,14 @@
             </div>
         {% endfor %}
         </div>
-        <div class = "col-0.5">Highscore = {{Highscore}}</div>
+        <div class = "col-2 highscore">Highscore = {{highscore}}</div>
     </div>
   </div>
 
 <div class = "text-center mt-5">
     <form id = "inputguess">
         <label class = "text-center ml-2 mr-2">Guess a Word</label>
-        <input type = "text" name = "guess" class = "text-center ml-2 mr-2">
+        <input type = "text" name = "guess" class = "ml-2 mr-2">
         <button type = "button" id = "restart" class = "btn btn-secondary ml-2 mb-1">Restart</button>
     </form>
 </div>
