@@ -30,8 +30,58 @@
     <h4></h4>
 </div>
 
+<!-- test section -->
+<!-- <div class="container text-center">
+    <div class="row">
+        <div class = "col-0.25">Left</div>
+        <div class = "container text-center col-11">
+        {% for row in board%}
+            <div class = "row mt-5">
+            {% for column in row%}
+                <div class = "col-sm">{{column}}</div>    
+            {% endfor %}
+            </div>
+        {% endfor %}
+        </div>
+        <div class = "col-0.25">Right</div>
+    </div>
+  </div> -->
+<!-- test section -->
+
 {% endblock %}
 
 {% block script %}
 <script src = "/static/index.js"></script>
 {% endblock %}
+
+
+
+<!-- legacy
+
+<div>
+<h1 class = "text-center mt-5">Boggle!</h1>
+</div>
+
+<div class = "container text-center">
+{% for row in board%}
+    <div class = "row mt-5">
+    {% for column in row%}
+        <div class = "col-sm">{{column}}</div>    
+    {% endfor %}
+    </div>
+{% endfor %}
+</div>
+
+<div class = "text-center mt-5">
+    <form id = "inputguess">
+        <label class = "text-center ml-2 mr-2">Guess a Word</label>
+        <input type = "text" name = "guess" class = "text-center ml-2 mr-2">
+        <button type = "button" id = "restart" class = "btn btn-secondary ml-2 mb-1">Restart</button>
+    </form>
+</div>
+
+<div class = "text-center mt-5 timer">
+    <h4></h4>
+</div>
+
+legacy -->
